@@ -5,4 +5,4 @@
 [16] Na pista 11 o carro 3 atropelou a galinha na posicao (18,32).
 [17] Na pista 11 o carro 3 atropelou a galinha na posicao (18,32).
 [18] Na pista 11 o carro 3 atropelou a galinha na posicao (18,32).
-[18] Fim de jogo.
+[18] Fim de jogo

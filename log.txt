@@ -39,8 +39,8 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Ok! Peso: 1.0
- - Resultado para o resumo.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 2.00 (soma total) - 0% (desconto do valgrind) = 2.00 de 8.0 pontos.
+ - Resultado para o resumo.txt: Ok! Peso: 1.0
+ - Nota para o Caso (soma dos pesos): 3.00 (soma total) - 0% (desconto do valgrind) = 3.00 de 8.0 pontos.
  - Pasta completo / Caso 10:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
  - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/10/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
@@ -199,8 +199,8 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Ok! Peso: 1.0
- - Resultado para o resumo.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 2.00 (soma total) - 0% (desconto do valgrind) = 2.00 de 8.0 pontos.
+ - Resultado para o resumo.txt: Ok! Peso: 1.0
+ - Nota para o Caso (soma dos pesos): 3.00 (soma total) - 0% (desconto do valgrind) = 3.00 de 8.0 pontos.
  - Pasta completo / Caso bonus_1:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
  - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/bonus_1/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
@@ -225,7 +225,7 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
  - Resultado para o resumo.txt: Incorreto! Peso: 0.0
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
- - Nota para a pasta completo (máximo 9.0) - 28.00 de 192.0 - 14.00% de 9.0: 1.26.
+ - Nota para a pasta completo (máximo 9.0) - 30.00 de 192.0 - 15.00% de 9.0: 1.35.
  -----
 
 #######################################
@@ -238,10 +238,10 @@ Aluno: isaque
  - Pastas Compiladas Corretamente: 1 de 1 
  - Pastas Linkadas Corretamente: 1 de 1
  - Teste completo
- - Resultados corretos: 28 de 144
- - Nota de isaque para o teste completo: 1.26
- - Nota de isaque: 0+(1.26)
- - Nota de isaque: 1.26
+ - Resultados corretos: 30 de 144
+ - Nota de isaque para o teste completo: 1.35
+ - Nota de isaque: 0+(1.35)
+ - Nota de isaque: 1.35
 
 ----------------------------------------------------------------------------
 

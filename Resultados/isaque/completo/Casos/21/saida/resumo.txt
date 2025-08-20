@@ -3,4 +3,4 @@
 [28] Na pista 8 o carro 3 atropelou a galinha na posicao (45,23).
 [33] Na pista 4 o carro 6 atropelou a galinha na posicao (45,11).
 [37] Na pista 5 o carro 1 atropelou a galinha na posicao (45,14).
-[37] Fim de jogo.
+[37] Fim de jogo
