@@ -43,8 +43,8 @@ Pontos: 0 | Vidas: 9 | Iteracoes: 2
 |                                 |
 |                                 |
 |-- -- -- -- -- -- -- -- -- -- -- |
-|  OOO   OOO   OOO        OOO   OOO
-|  -=-   -=-   -=-        -=-   -=-
+|  OOO   OOO   OOO        OOO   OO|
+|  -=-   -=-   -=-        -=-   -=|
 |-- -- -- -- -- -- -- -- -- -- -- |
 |           OOO            OOO OOO|
 |           -=-            -=- -=-|
@@ -123,14 +123,14 @@ Pontos: 0 | Vidas: 8 | Iteracoes: 6
 |                                 |
 |                                 |
 |-- -- -- -- -- -- -- -- -- -- -- |
-|    OOO   OOO        OOO   OOO OOO
-|    -=-   -=-        -=-   -=- -=-
+|    OOO   OOO        OOO   OOO OO|
+|    -=-   -=-        -=-   -=- -=|
 |-- -- -- -- -- -- -- -- -- -- -- |
 |   OOO            OOO OOO        |
 |   -=-            -=- -=-        |
 |-- -- -- -- -- -- -- -- -- -- -- |
-|             OOO     OOO  OOO  OOO
-|             -=-     -=-  -=-  -=-
+|             OOO     OOO  OOO  OO|
+|             -=-     -=-  -=-  -=|
 |-- -- -- -- -- -- -- -- -- -- -- |
 |                                 |
 |                                 |
@@ -243,8 +243,8 @@ Pontos: 2 | Vidas: 7 | Iteracoes: 12
 |                                 |
 |                                 |
 |-- -- -- -- -- -- -- -- -- -- -- |
-|    OOO        OOO   OOO OOO   OOO
-|    -=-        -=-   -=- -=-   -=-
+|    OOO        OOO   OOO OOO   OO|
+|    -=-        -=-   -=- -=-   -=|
 |-- -- -- -- -- -- -- -- -- -- -- |
 |      OOO OOO           OOO      |
 |      -=- -=-           -=-      |
@@ -326,8 +326,8 @@ Pontos: 6 | Vidas: 7 | Iteracoes: 16
 |OOO     o_oOOO   OOO OOO   OOO   |
 |-=-     ( )-=-   -=- -=-   -=-   |
 |-- -- -- -- -- -- -- -- -- -- -- |
-|  OOO           OOO            OOO
-|  -=-           -=-            -=-
+|  OOO           OOO            OO|
+|  -=-           -=-            -=|
 |-- -- -- -- -- -- -- -- -- -- -- |
 |OOO  OOO            OOO     OOO  |
 |-=-  -=-            -=-     -=-  |

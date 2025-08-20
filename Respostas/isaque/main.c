@@ -61,6 +61,14 @@ typedef struct {
     int heatmap[MAX_LINHAS][MAX_COLUNAS];
 } tJogo;
 
+/* -------------------------- HELPERS ----------------------------- */
+
+int ClampInt(int v, int lo, int hi) {
+    if (v < lo) return lo;
+    if (v > hi) return hi;
+    return v;
+}
+
 /* ------------------------ DESENHO DE MAPA ----------------------- */
 
 tJogo DesenhaBaseMapa(tJogo jogo) {
@@ -87,14 +95,16 @@ tJogo DesenhaBaseMapa(tJogo jogo) {
     return jogo;
 }
 
-void DesenhaSprite(char matriz[MAX_LINHAS][MAX_COLUNAS], int x_centro, int y_sup, char skin[2][3]) {
+void DesenhaSprite(char matriz[MAX_LINHAS][MAX_COLUNAS],
+                   int x_centro, int y_sup, char skin[2][3],
+                   int largura_total, int altura_total) {
     int i, j, y, x;
     for (i = 0; i < 2; i++) {
         for (j = 0; j < 3; j++) {
             y = y_sup + i;
             x = x_centro - 1 + j;
-            /* dentro do quadro interno (sem bordas) */
-            if (y > 0 && y < MAX_LINHAS - 1 && x > 0 && x < MAX_COLUNAS - 1) {
+            /* dentro do quadro interno (sem bordas) e dentro do mapa ativo */
+            if (y > 0 && y < altura_total - 1 && x > 0 && x < largura_total - 1) {
                 matriz[y][x] = skin[i][j];
             }
         }
@@ -104,16 +114,22 @@ void DesenhaSprite(char matriz[MAX_LINHAS][MAX_COLUNAS], int x_centro, int y_sup
 tJogo DesenhaCarros(tJogo jogo) {
     int p, i, y;
     for (p = 1; p < jogo.qtd_pistas - 1; p++) {
+        y = (p * 3) + 1;
         for (i = 0; i < jogo.pistas[p].num_carros; i++) {
-            y = (p * 3) + 1;
-            DesenhaSprite(jogo.mapa_matriz, jogo.pistas[p].carros[i].x, y, jogo.skin_carro_padrao);
+            DesenhaSprite(jogo.mapa_matriz,
+                          jogo.pistas[p].carros[i].x, y,
+                          jogo.skin_carro_padrao,
+                          jogo.largura_total, jogo.altura_total);
         }
     }
     return jogo;
 }
 
 tJogo DesenhaGalinha(tJogo jogo) {
-    DesenhaSprite(jogo.mapa_matriz, jogo.galinha.x_atual, jogo.galinha.y_atual, jogo.galinha.skin);
+    DesenhaSprite(jogo.mapa_matriz,
+                  jogo.galinha.x_atual, jogo.galinha.y_atual,
+                  jogo.galinha.skin,
+                  jogo.largura_total, jogo.altura_total);
     return jogo;
 }
 
@@ -137,6 +153,8 @@ tJogo LeArquivoConfig(char *diretorio) {
     char linha[1024];
     int p, k, nchar;
     int animacao;
+    int qtd_pistas_lida;
+    int largura_mapa_lida;
 
     memset(&jogo, 0, sizeof(tJogo));
     jogo.altura_min_atropelada = 999;
@@ -155,13 +173,26 @@ tJogo LeArquivoConfig(char *diretorio) {
         exit(1);
     }
 
-    if (fscanf(arq, "%d %d", &jogo.largura_mapa, &jogo.qtd_pistas) != 2) {
+    if (fscanf(arq, "%d %d", &largura_mapa_lida, &qtd_pistas_lida) != 2) {
         MensagemErroArquivo(caminho);
         fclose(arq);
         exit(1);
     }
 
+    /* saneamento de limites do mapa */
+    largura_mapa_lida = ClampInt(largura_mapa_lida, 5, MAX_COLUNAS - 2);
+    qtd_pistas_lida   = ClampInt(qtd_pistas_lida, 3, MAX_PISTAS);
+
+    jogo.largura_mapa = largura_mapa_lida;
+    jogo.qtd_pistas   = qtd_pistas_lida;
+
     jogo.altura_total = (jogo.qtd_pistas * 3) + 1;
+    if (jogo.altura_total > MAX_LINHAS) {
+        /* reduz pistas para caber no limite físico */
+        jogo.qtd_pistas = (MAX_LINHAS - 1) / 3;
+        if (jogo.qtd_pistas < 3) jogo.qtd_pistas = 3;
+        jogo.altura_total = (jogo.qtd_pistas * 3) + 1;
+    }
     jogo.largura_total = jogo.largura_mapa + 2;
 
     fgets(linha, sizeof(linha), arq); /* consome resto da linha */
@@ -179,10 +210,28 @@ tJogo LeArquivoConfig(char *diretorio) {
                         &jogo.pistas[p].velocidade,
                         &jogo.pistas[p].num_carros,
                         &nchar) >= 3) {
-            char *pos = linha + nchar;
+            char *pos;
+            int lidos;
+            /* saneia direção e limites */
+            if (jogo.pistas[p].direcao != 'D' && jogo.pistas[p].direcao != 'E') {
+                jogo.pistas[p].num_carros = 0;
+                jogo.pistas[p].velocidade = 0;
+            }
+            if (jogo.pistas[p].velocidade < 0) jogo.pistas[p].velocidade = -jogo.pistas[p].velocidade;
+            /* velocidade 0 deixa parado; permitido */
+            if (jogo.pistas[p].num_carros < 0) jogo.pistas[p].num_carros = 0;
+            if (jogo.pistas[p].num_carros > MAX_CARROS_PISTA) jogo.pistas[p].num_carros = MAX_CARROS_PISTA;
+
+            pos = linha + nchar;
             for (k = 0; k < jogo.pistas[p].num_carros; k++) {
-                if (sscanf(pos, "%d %n", &jogo.pistas[p].carros[k].x, &nchar) >= 1) {
-                    pos += nchar;
+                if (sscanf(pos, "%d %n", &jogo.pistas[p].carros[k].x, &lidos) >= 1) {
+                    pos += lidos;
+                    /* deixa dentro de 1..largura_mapa para wrap funcionar */
+                    jogo.pistas[p].carros[k].x = ClampInt(jogo.pistas[p].carros[k].x, 1, jogo.largura_mapa);
+                } else {
+                    /* se faltou número, reduz num_carros efetivo */
+                    jogo.pistas[p].num_carros = k;
+                    break;
                 }
             }
         }
@@ -195,7 +244,7 @@ tJogo LeArquivoConfig(char *diretorio) {
     jogo.galinha.y_inicial = jogo.altura_total - 3;
     jogo.galinha.y_atual   = jogo.galinha.y_inicial;
 
-    /* garante X inicial dentro (2..largura_mapa-1) */
+    /* garante X inicial dentro (2..largura_mapa-1) para sprite 3 colunas */
     if (jogo.galinha.x_inicial < 2) jogo.galinha.x_inicial = 2;
     if (jogo.galinha.x_inicial > jogo.largura_mapa - 1) jogo.galinha.x_inicial = jogo.largura_mapa - 1;
     jogo.galinha.x_atual = jogo.galinha.x_inicial;
@@ -331,7 +380,8 @@ void SalvaArquivosFinais(char *diretorio, tJogo jogo, tRanking ranking[], char r
     do {
         trocou = 0;
         for (i = 0; i < jogo.total_atropelamentos - 1; i++) {
-            int trocar = 0;
+            int trocar;
+            trocar = 0;
             if (ranking[i].id_pista > ranking[i + 1].id_pista) trocar = 1;
             else if (ranking[i].id_pista == ranking[i + 1].id_pista) {
                 if (ranking[i].id_carro > ranking[i + 1].id_carro) trocar = 1;
@@ -505,9 +555,8 @@ int main(int argc, char *argv[]) {
             break; /* fim da entrada */
         }
 
-        /* 3) Só processa 'w' e 's'.
-              Qualquer outra tecla (inclui ' ', '\n', '\r', '\t', etc):
-              NOP absoluto: não move carros, não incrementa iteracao, não checa colisão, não imprime. */
+        /* 3) Só processa 'w' e 's'. Teclas diferentes são ignoradas COMPLETAMENTE:
+              não move carros, não incrementa iteracao, não checa colisão, não imprime. */
         if (ch == 'w' || ch == 's') {
             /* 3.1) Move galinha */
             if (ch == 'w') {
@@ -531,9 +580,11 @@ int main(int argc, char *argv[]) {
 
             /* 5) Colisao */
             {
-                tColisao col = VerificaColisao(jogo);
+                tColisao col;
+                col = VerificaColisao(jogo);
                 if (col.houve) {
-                    int h_atrop = ConverteYparaAltura(jogo, jogo.galinha.y_atual);
+                    int h_atrop;
+                    h_atrop = ConverteYparaAltura(jogo, jogo.galinha.y_atual);
                     if (h_atrop > jogo.altura_max_atropelada) jogo.altura_max_atropelada = h_atrop;
                     if (h_atrop < jogo.altura_min_atropelada) jogo.altura_min_atropelada = h_atrop;
 
@@ -596,7 +647,7 @@ int main(int argc, char *argv[]) {
                 break;
             }
         } else {
-            /* tecla ignorada: nada acontece (NOP absoluto) */
+            /* tecla ignorada: NOP absoluto */
         }
     }
 

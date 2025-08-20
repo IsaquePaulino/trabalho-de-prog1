@@ -243,8 +243,8 @@ Pontos: 4 | Vidas: 6 | Iteracoes: 6
 |                                          |
 |                                          |
 |-- -- -- -- -- -- -- -- -- -- -- -- -- -- |
-|  BUS  BUS                              BUS
-|  0O0  0O0                              0O0
+|  BUS  BUS                              BU|
+|  0O0  0O0                              0O|
 |-- -- -- -- -- -- -- -- -- -- -- -- -- -- |
 |                                    BUS   |
 |                                    0O0   |
@@ -296,8 +296,8 @@ Pontos: 5 | Vidas: 6 | Iteracoes: 7
 |       BUS     BUS     BUS           BUS  |
 |       0O0     0O0     0O0           0O0  |
 |-- -- -- -- -- -- -- -- -- -- -- -- -- -- |
-|      BUS                  BUS BUS      BUS
-|      0O0                  0O0 0O0      0O0
+|      BUS                  BUS BUS      BU|
+|      0O0                  0O0 0O0      0O|
 |-- -- -- -- -- -- -- -- -- -- -- -- -- -- |
 |                                          |
 |                                          |
@@ -322,8 +322,8 @@ Pontos: 6 | Vidas: 6 | Iteracoes: 8
 | BUS            ^_^               BUS BUS |
 | 0O0            (o)               0O0 0O0 |
 |-- -- -- -- -- -- -- -- -- -- -- -- -- -- |
-|                                        BUS
-|                                        0O0
+|                                        BU|
+|                                        0O|
 |-- -- -- -- -- -- -- -- -- -- -- -- -- -- |
 |                                          |
 |                                          |
@@ -351,14 +351,14 @@ Pontos: 7 | Vidas: 6 | Iteracoes: 9
 |   BUS                                    |
 |   0O0                                    |
 |-- -- -- -- -- -- -- -- -- -- -- -- -- -- |
-|   BUSBUS   BUSBUS      BUS  BUSBUS BUS BUS
-|   0O00O0   0O00O0      0O0  0O00O0 0O0 0O0
+|   BUSBUS   BUSBUS      BUS  BUSBUS BUS BU|
+|   0O00O0   0O00O0      0O0  0O00O0 0O0 0O|
 |-- -- -- -- -- -- -- -- -- -- -- -- -- -- |
 |                ^_^                       |
 |                (o)                       |
 |-- -- -- -- -- -- -- -- -- -- -- -- -- -- |
-|                               BUS BUS  BUS
-|                               0O0 0O0  0O0
+|                               BUS BUS  BU|
+|                               0O0 0O0  0O|
 |-- -- -- -- -- -- -- -- -- -- -- -- -- -- |
 |BUS                                       |
 |0O0                                       |
@@ -600,8 +600,8 @@ Pontos: 0 | Vidas: 3 | Iteracoes: 15
 |     BUS         BUS     BUS     BUS      |
 |     0O0         0O0     0O0     0O0      |
 |-- -- -- -- -- -- -- -- -- -- -- -- -- -- |
-|                   BUS BUS      BUS     BUS
-|                   0O0 0O0      0O0     0O0
+|                   BUS BUS      BUS     BU|
+|                   0O0 0O0      0O0     0O|
 |-- -- -- -- -- -- -- -- -- -- -- -- -- -- |
 |                ^_^                       |
 |                (o)                       |
