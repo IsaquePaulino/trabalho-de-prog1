@@ -3,4 +3,4 @@
 [30] Na pista 9 o carro 4 atropelou a galinha na posicao (16,26).
 [34] Na pista 9 o carro 6 atropelou a galinha na posicao (16,26).
 [53] Na pista 9 o carro 4 atropelou a galinha na posicao (16,26).
-[53] Fim de jogo
+[53] Fim de jogo.

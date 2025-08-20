@@ -1,0 +1,4 @@
+main.c: In function ‘main’:
+main.c:387:9: warning: unused variable ‘jogo_acabou’ [-Wunused-variable]
+  387 |     int jogo_acabou = 0;
+      |         ^~~~~~~~~~~

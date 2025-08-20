@@ -1,0 +1,8 @@
+Arquivos Esperados Corretos: 1 de 1
+Pastas Compiladas Corretamente: 1 de 1 
+Pastas Linkadas Corretamente: 1 de 1
+Teste completo
+  - Resultados corretos: 28 de 144
+Nota de isaque para o teste completo: 1.26
+Nota de isaque: 0+(1.26)
+Nota de isaque: 1.26

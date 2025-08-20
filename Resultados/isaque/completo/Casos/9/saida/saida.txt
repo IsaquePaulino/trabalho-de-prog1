@@ -1,4 +1,3 @@
-Pontos: 0 | Vidas: 5 | Iteracoes: 0
 |-----------------------------|
 |                             |
 |                             |
@@ -9,7 +8,6 @@ Pontos: 0 | Vidas: 5 | Iteracoes: 0
 |             ^_^             |
 |             (o)             |
 |-----------------------------|
-Pontos: 1 | Vidas: 5 | Iteracoes: 1
 |-----------------------------|
 |                             |
 |                             |
@@ -20,7 +18,6 @@ Pontos: 1 | Vidas: 5 | Iteracoes: 1
 |                             |
 |                             |
 |-----------------------------|
-Pontos: 1 | Vidas: 5 | Iteracoes: 2
 |-----------------------------|
 |                             |
 |                             |
@@ -31,7 +28,6 @@ Pontos: 1 | Vidas: 5 | Iteracoes: 2
 |             ^_^             |
 |             (o)             |
 |-----------------------------|
-Pontos: 2 | Vidas: 5 | Iteracoes: 3
 |-----------------------------|
 |                             |
 |                             |
@@ -42,7 +38,6 @@ Pontos: 2 | Vidas: 5 | Iteracoes: 3
 |                             |
 |                             |
 |-----------------------------|
-Pontos: 2 | Vidas: 5 | Iteracoes: 4
 |-----------------------------|
 |                             |
 |                             |
@@ -53,7 +48,6 @@ Pontos: 2 | Vidas: 5 | Iteracoes: 4
 |             ^_^             |
 |             (o)             |
 |-----------------------------|
-Pontos: 3 | Vidas: 5 | Iteracoes: 5
 |-----------------------------|
 |                             |
 |                             |
@@ -64,9 +58,11 @@ Pontos: 3 | Vidas: 5 | Iteracoes: 5
 |                             |
 |                             |
 |-----------------------------|
-Pontos: 14 | Vidas: 5 | Iteracoes: 6
 |-----------------------------|
 |             ^_^             |
+|             (o)             |
+|-- -- -- -- -- -- -- -- -- --|
+     |
 |             (o)             |
 |-- -- -- -- -- -- -- -- -- --|
 |                             |
@@ -75,4 +71,4 @@ Pontos: 14 | Vidas: 5 | Iteracoes: 6
 |                             |
 |                             |
 |-----------------------------|
-Parabens! Voce atravessou todas as pistas e venceu!
+A galinha venceu o jogo com 14 pontos!

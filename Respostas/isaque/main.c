@@ -46,6 +46,7 @@ typedef struct {
     tPista pistas[MAX_PISTAS];
     tGalinha galinha;
     char skin_carro_padrao[2][3];
+
     int total_movimentos;
     int movimentos_tras;
     int altura_maxima_alcancada;
@@ -56,7 +57,7 @@ typedef struct {
 } tJogo;
 
 
-// --- FUNCOES DO JOGO ---
+// --- FUNCOES DE DESENHO ---
 
 tJogo DesenhaBaseMapa(tJogo jogo) {
     int i, j;
@@ -117,6 +118,9 @@ tJogo AtualizaDesenhoCompleto(tJogo jogo) {
     return jogo;
 }
 
+
+// --- FUNCOES DE INICIALIZACAO ---
+
 tJogo LeArquivoConfig(char *diretorio) {
     tJogo jogo;
     char caminho_completo[MAX_CAMINHO];
@@ -127,7 +131,15 @@ tJogo LeArquivoConfig(char *diretorio) {
     if (arquivo == NULL) { exit(1); }
 
     memset(&jogo, 0, sizeof(tJogo));
-    jogo.altura_min_atropelada = 999;
+    jogo.altura_min_atropelada = 999999;
+    jogo.altura_max_atropelada = -1;
+
+    int i, j;
+    for (i = 0; i < MAX_LINHAS; i++) {
+        for (j = 0; j < MAX_COLUNAS; j++) {
+            jogo.heatmap[i][j] = 0;
+        }
+    }
 
     int animacao;
     fscanf(arquivo, "%d", &animacao);
@@ -139,7 +151,7 @@ tJogo LeArquivoConfig(char *diretorio) {
     char buffer[1024];
     fgets(buffer, sizeof(buffer), arquivo); 
 
-    int p, i;
+    int p, k;
     for (p = 0; p < jogo.qtd_pistas; p++) {
         if (!fgets(buffer, sizeof(buffer), arquivo)) break;
         
@@ -150,8 +162,8 @@ tJogo LeArquivoConfig(char *diretorio) {
             jogo.pistas[p].num_carros = 0;
         } else if (sscanf(pos, " %c %d %d %n", &jogo.pistas[p].direcao, &jogo.pistas[p].velocidade, &jogo.pistas[p].num_carros, &chars_lidos) >= 3) {
             pos += chars_lidos;
-            for (i = 0; i < jogo.pistas[p].num_carros; i++) {
-                if(sscanf(pos, "%d %n", &jogo.pistas[p].carros[i].x, &chars_lidos) >= 1) {
+            for (k = 0; k < jogo.pistas[p].num_carros; k++) {
+                if(sscanf(pos, "%d %n", &jogo.pistas[p].carros[k].x, &chars_lidos) >= 1) {
                     pos += chars_lidos;
                 }
             }
@@ -212,6 +224,9 @@ void SalvaArquivoInicializacao(char *diretorio, tJogo jogo) {
     fclose(arquivo);
 }
 
+
+// --- FUNCOES DO JOGO ---
+
 tJogo MoveCarros(tJogo jogo) {
     int p, i;
     for (p = 1; p < jogo.qtd_pistas - 1; p++) {
@@ -253,10 +268,54 @@ int VerificaColisao(tJogo jogo, int *pista_colisao, int *carro_colisao) {
     return 0;
 }
 
-void SalvaArquivosFinais(char *diretorio, tJogo jogo, tRanking ranking[], char resumo_log[]) {
+
+// --- UTILS ---
+
+void MarcaHeatGalinha(tJogo *pjogo) {
+    int i, j;
+    for (i = 0; i < 2; i++) {
+        for (j = -1; j <= 1; j++) {
+            int hx = pjogo->galinha.x_atual + j;
+            int hy = pjogo->galinha.y_atual + i;
+            if (hy >= 0 && hy < MAX_LINHAS && hx >= 0 && hx < MAX_COLUNAS) {
+                if (pjogo->heatmap[hy][hx] < 99) pjogo->heatmap[hy][hx]++;
+            }
+        }
+    }
+}
+
+void OrdenaRanking(tRanking v[], int n) {
+    int i, trocou = 1;
+    while (trocou) {
+        trocou = 0;
+        for (i = 0; i < n - 1; i++) {
+            int a1 = v[i].id_pista, b1 = v[i].id_carro, c1 = v[i].iteracao;
+            int a2 = v[i+1].id_pista, b2 = v[i+1].id_carro, c2 = v[i+1].iteracao;
+            int troca = 0;
+            if (a1 > a2) troca = 1;
+            else if (a1 == a2) {
+                if (b1 > b2) troca = 1;
+                else if (b1 == b2 && c1 < c2) troca = 1;
+            }
+            if (troca) {
+                tRanking tmp = v[i];
+                v[i] = v[i+1];
+                v[i+1] = tmp;
+                trocou = 1;
+            }
+        }
+    }
+}
+
+
+// --- SALVA ARQUIVOS FINAIS ---
+
+void SalvaArquivosFinais(char *diretorio, tJogo jogo, tRanking ranking[], int qtdRank, char resumo_log[]) {
     char caminho_completo[MAX_CAMINHO];
     FILE *arquivo;
+    int i, j;
 
+    // estatisticas.txt
     sprintf(caminho_completo, "%s/saida/estatisticas.txt", diretorio);
     arquivo = fopen(caminho_completo, "w");
     if (!arquivo) return;
@@ -272,54 +331,33 @@ void SalvaArquivosFinais(char *diretorio, tJogo jogo, tRanking ranking[], char r
     fprintf(arquivo, "Numero de movimentos na direcao oposta: %d\n", jogo.movimentos_tras);
     fclose(arquivo);
 
+    // heatmap.txt
     sprintf(caminho_completo, "%s/saida/heatmap.txt", diretorio);
     arquivo = fopen(caminho_completo, "w");
     if (!arquivo) return;
-    int i, j;
     for (i = 1; i < jogo.altura_total; i++) {
-        if(i % 3 == 0) continue;
+        if (i % 3 == 0) continue;
         for (j = 1; j < jogo.largura_total - 1; j++) {
-            if (jogo.heatmap[i][j] == -1) {
-                fprintf(arquivo, "  *");
-            } else {
-                int valor = jogo.heatmap[i][j] > 99 ? 99 : jogo.heatmap[i][j];
-                fprintf(arquivo, "%3d", valor);
-            }
+            int valor = jogo.heatmap[i][j];
+            if (valor > 99) valor = 99;
+            fprintf(arquivo, "%3d", valor);
         }
         fprintf(arquivo, "\n");
     }
     fclose(arquivo);
 
+    // ranking.txt
     sprintf(caminho_completo, "%s/saida/ranking.txt", diretorio);
     arquivo = fopen(caminho_completo, "w");
     if (!arquivo) return;
-    int trocou;
-    do {
-        trocou = 0;
-        for (i = 0; i < jogo.total_atropelamentos - 1; i++) {
-            int trocar = 0;
-            if (ranking[i].id_pista > ranking[i + 1].id_pista) trocar = 1;
-            else if (ranking[i].id_pista == ranking[i + 1].id_pista) {
-                if (ranking[i].id_carro > ranking[i + 1].id_carro) trocar = 1;
-                else if (ranking[i].id_carro == ranking[i + 1].id_carro) {
-                    if (ranking[i].iteracao < ranking[i + 1].iteracao) trocar = 1;
-                }
-            }
-            if (trocar) {
-                tRanking temp = ranking[i];
-                ranking[i] = ranking[i + 1];
-                ranking[i + 1] = temp;
-                trocou = 1;
-            }
-        }
-    } while (trocou);
+    OrdenaRanking(ranking, qtdRank);
     fprintf(arquivo, "id_pista,id_carro,iteracao\n");
-    for (i = 0; i < jogo.total_atropelamentos; i++) {
-        // CORRIGIDO: Indice da pista agora eh +1 para comecar em 1.
+    for (i = 0; i < qtdRank; i++) {
         fprintf(arquivo, "%d,%d,%d\n", ranking[i].id_pista + 1, ranking[i].id_carro, ranking[i].iteracao);
     }
     fclose(arquivo);
 
+    // resumo.txt
     sprintf(caminho_completo, "%s/saida/resumo.txt", diretorio);
     arquivo = fopen(caminho_completo, "w");
     if (!arquivo) return;
@@ -327,7 +365,9 @@ void SalvaArquivosFinais(char *diretorio, tJogo jogo, tRanking ranking[], char r
     fclose(arquivo);
 }
 
-// --- FUNCAO MAIN ---
+
+// --- MAIN ---
+
 int main(int argc, char *argv[]) {
     if (argc < 2) {
         printf("ERRO: Informe o diretorio com os arquivos de configuracao.\n");
@@ -337,35 +377,33 @@ int main(int argc, char *argv[]) {
 
     tJogo jogo = LeArquivoConfig(diretorio);
     jogo = LeArquivoPersonagens(diretorio, jogo);
-    
-    char caminho_saida_dir[MAX_CAMINHO];
-    sprintf(caminho_saida_dir, "%s/saida", diretorio);
 
     jogo = AtualizaDesenhoCompleto(jogo);
     SalvaArquivoInicializacao(diretorio, jogo);
-    
+
     char comando;
     int iteracao = 0;
     int pontos = 0;
     int jogo_acabou = 0;
-    
-    char resumo_log[16384] = ""; 
-    tRanking ranking[500]; 
-    
+
+    char resumo_log[20000] = "";
+    tRanking ranking[500];
+    int qtdRank = 0;
+
     char caminho_saida_txt[MAX_CAMINHO];
     sprintf(caminho_saida_txt, "%s/saida/saida.txt", diretorio);
     FILE *arquivo_saida = fopen(caminho_saida_txt, "w");
     if (!arquivo_saida) { return 1; }
 
-    // --- LOOP PRINCIPAL DO JOGO (REESTRUTURADO) ---
+    // heatmap inicial
+    MarcaHeatGalinha(&jogo);
+
     while (1) {
-        // ETAPA 1 (PDF): Verifica condicoes de vitoria/derrota do estado ANTERIOR
-        if (jogo.galinha.y_atual <= 1) { // Vitoria
+        // Condicoes de vitoria/derrota
+        if (jogo.galinha.y_atual <= 1) {
             pontos += 10;
             jogo = AtualizaDesenhoCompleto(jogo);
-            printf("Pontos: %d | Vidas: %d | Iteracoes: %d\n", pontos, jogo.galinha.vidas, iteracao);
-            fprintf(arquivo_saida, "Pontos: %d | Vidas: %d | Iteracoes: %d\n", pontos, jogo.galinha.vidas, iteracao);
-            // Imprime o ultimo mapa
+            printf("Pontos: %d\n", pontos);
             for (int i = 0; i < jogo.altura_total; i++) {
                 for (int j = 0; j < jogo.largura_total; j++) {
                     printf("%c", jogo.mapa_matriz[i][j]);
@@ -374,42 +412,32 @@ int main(int argc, char *argv[]) {
                 printf("\n");
                 fprintf(arquivo_saida, "\n");
             }
-            printf("Parabens! Voce atravessou todas as pistas e venceu!\n");
-            fprintf(arquivo_saida, "Parabens! Voce atravessou todas as pistas e venceu!\n");
-            sprintf(resumo_log + strlen(resumo_log), "[%d] Fim de jogo\n", iteracao);
-            jogo_acabou = 1;
-        } else if (jogo.galinha.vidas <= 0) { // Derrota
-            printf("Voce perdeu todas as vidas! Fim de jogo.\n");
-            fprintf(arquivo_saida, "Voce perdeu todas as vidas! Fim de jogo.\n");
-            sprintf(resumo_log + strlen(resumo_log), "[%d] Fim de jogo\n", iteracao);
-            jogo_acabou = 1;
+            printf("A galinha venceu o jogo com %d pontos!\n", pontos);
+            fprintf(arquivo_saida, "A galinha venceu o jogo com %d pontos!\n", pontos);
+            sprintf(resumo_log + strlen(resumo_log), "[%d] Fim de jogo.\n", iteracao);
+            break;
+        }
+        if (jogo.galinha.vidas <= 0) {
+            jogo = AtualizaDesenhoCompleto(jogo);
+            printf("Pontos: %d\n", pontos);
+            for (int i = 0; i < jogo.altura_total; i++) {
+                for (int j = 0; j < jogo.largura_total; j++) {
+                    printf("%c", jogo.mapa_matriz[i][j]);
+                    fprintf(arquivo_saida, "%c", jogo.mapa_matriz[i][j]);
+                }
+                printf("\n");
+                fprintf(arquivo_saida, "\n");
+            }
+            printf("A galinha perdeu todas as suas vidas e terminou o jogo com %d pontos.\n", pontos);
+            fprintf(arquivo_saida, "A galinha perdeu todas as suas vidas e terminou o jogo com %d pontos.\n", pontos);
+            sprintf(resumo_log + strlen(resumo_log), "[%d] Fim de jogo.\n", iteracao);
+            break;
         }
 
-        // Se o jogo acabou, sai do loop
-        if (jogo_acabou) break;
-        
-        // ETAPA 7 (PDF): Exibe o estado ATUAL antes de pedir o proximo comando
-        // Atualiza heatmap e estatisticas para o estado atual ANTES de mover
-        int altura_atual = ConverteYparaAltura(jogo, jogo.galinha.y_atual);
-        if (altura_atual > jogo.altura_maxima_alcancada) {
-            jogo.altura_maxima_alcancada = altura_atual;
-        }
-        int i, j;
-        for(i = 0; i < 2; i++){
-            for(j = -1; j <= 1; j++){
-                int hx = jogo.galinha.x_atual + j;
-                int hy = jogo.galinha.y_atual + i;
-                if(hy >= 0 && hy < MAX_LINHAS && hx >= 0 && hx < MAX_COLUNAS && jogo.heatmap[hy][hx] != -1) {
-                    jogo.heatmap[hy][hx]++;
-                }
-            }
-        }
-        
         jogo = AtualizaDesenhoCompleto(jogo);
-        printf("Pontos: %d | Vidas: %d | Iteracoes: %d\n", pontos, jogo.galinha.vidas, iteracao);
-        fprintf(arquivo_saida, "Pontos: %d | Vidas: %d | Iteracoes: %d\n", pontos, jogo.galinha.vidas, iteracao);
-        for (i = 0; i < jogo.altura_total; i++) {
-            for (j = 0; j < jogo.largura_total; j++) {
+        printf("Pontos: %d\n", pontos);
+        for (int i = 0; i < jogo.altura_total; i++) {
+            for (int j = 0; j < jogo.largura_total; j++) {
                 printf("%c", jogo.mapa_matriz[i][j]);
                 fprintf(arquivo_saida, "%c", jogo.mapa_matriz[i][j]);
             }
@@ -417,63 +445,64 @@ int main(int argc, char *argv[]) {
             fprintf(arquivo_saida, "\n");
         }
 
+        // comando
+        if (scanf(" %c", &comando) != 1) break;
 
-        // ETAPA 2 (PDF): Le a jogada
-        if (scanf(" %c", &comando) != 1) {
-            break; // Fim da entrada
-        }
-
-        // ETAPA 3 (PDF): Move a galinha e atualiza pontos
         if (comando == 'w') {
             jogo.galinha.y_atual -= 3;
             pontos++;
+            jogo.total_movimentos++;
         } else if (comando == 's') {
-            jogo.movimentos_tras++;
             if (jogo.galinha.y_atual < jogo.galinha.y_inicial) {
                 jogo.galinha.y_atual += 3;
             }
+            jogo.movimentos_tras++;
+            jogo.total_movimentos++;
         }
-        
-        // ETAPA 4 (PDF): Move os carros
+
+        // atualizar altura maxima
+        int alturaAtual = ConverteYparaAltura(jogo, jogo.galinha.y_atual);
+        if (alturaAtual > jogo.altura_maxima_alcancada) {
+            jogo.altura_maxima_alcancada = alturaAtual;
+        }
+
+        // carros
         jogo = MoveCarros(jogo);
-        
-        // ETAPA 5 (PDF): Verifica colisao
+
+        // colisao
         int pista_colidida = 0, carro_colidido = 0;
         if (VerificaColisao(jogo, &pista_colidida, &carro_colidido)) {
-            // Atualiza logs e estatisticas da colisao
             int altura_atrop = ConverteYparaAltura(jogo, jogo.galinha.y_atual);
             if (altura_atrop > jogo.altura_max_atropelada) jogo.altura_max_atropelada = altura_atrop;
             if (altura_atrop < jogo.altura_min_atropelada) jogo.altura_min_atropelada = altura_atrop;
             jogo.total_atropelamentos++;
-            
-            sprintf(resumo_log + strlen(resumo_log), "[%d] Na pista %d o carro %d atropelou a galinha na posicao (%d,%d).\n",
-                    iteracao + 1, pista_colidida + 1, carro_colidido, jogo.galinha.x_atual, jogo.galinha.y_atual + 1);
 
-            if(jogo.total_atropelamentos <= 500) {
-                ranking[jogo.total_atropelamentos-1].id_pista = pista_colidida;
-                ranking[jogo.total_atropelamentos-1].id_carro = carro_colidido;
-                ranking[jogo.total_atropelamentos-1].iteracao = iteracao + 1;
+            sprintf(resumo_log + strlen(resumo_log),
+                "[%d] Na pista %d o carro %d atropelou a galinha na posicao (%d,%d).\n",
+                iteracao + 1, pista_colidida + 1, carro_colidido,
+                jogo.galinha.x_atual, jogo.galinha.y_atual + 1);
+
+            if (qtdRank < 500) {
+                ranking[qtdRank].id_pista = pista_colidida;
+                ranking[qtdRank].id_carro = carro_colidido;
+                ranking[qtdRank].iteracao = iteracao + 1;
+                qtdRank++;
             }
-            
-            // Reseta estado da galinha
+
             jogo.galinha.vidas--;
             pontos = 0;
             jogo.galinha.x_atual = jogo.galinha.x_inicial;
             jogo.galinha.y_atual = jogo.galinha.y_inicial;
         }
-        
-        // ETAPA 6 (PDF): Incrementa iteracao
+
+        // marcar heatmap
+        MarcaHeatGalinha(&jogo);
+
         iteracao++;
     }
-    
-    jogo.total_movimentos = iteracao;
-    int altura_final = ConverteYparaAltura(jogo, jogo.galinha.y_atual);
-    if (altura_final > jogo.altura_maxima_alcancada) {
-        jogo.altura_maxima_alcancada = altura_final;
-    }
-
-    SalvaArquivosFinais(diretorio, jogo, ranking, resumo_log);
 
     fclose(arquivo_saida);
+
+    SalvaArquivosFinais(diretorio, jogo, ranking, qtdRank, resumo_log);
     return 0;
 }
