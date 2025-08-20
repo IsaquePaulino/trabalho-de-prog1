@@ -64,7 +64,7 @@ Pontos: 3 | Vidas: 5 | Iteracoes: 5
 |                             |
 |                             |
 |-----------------------------|
-Pontos: 4 | Vidas: 5 | Iteracoes: 6
+Pontos: 14 | Vidas: 5 | Iteracoes: 6
 |-----------------------------|
 |             ^_^             |
 |             (o)             |

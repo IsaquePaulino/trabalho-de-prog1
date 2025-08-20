@@ -40,7 +40,7 @@ Pontos: 2 | Vidas: 3 | Iteracoes: 2
 |                         |
 |                         |
 |-------------------------|
-Pontos: 3 | Vidas: 3 | Iteracoes: 3
+Pontos: 13 | Vidas: 3 | Iteracoes: 3
 |-------------------------|
 |             ^_^         |
 |             (o)         |

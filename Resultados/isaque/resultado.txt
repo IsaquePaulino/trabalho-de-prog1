@@ -2,7 +2,7 @@ Arquivos Esperados Corretos: 1 de 1
 Pastas Compiladas Corretamente: 1 de 1 
 Pastas Linkadas Corretamente: 1 de 1
 Teste completo
-  - Resultados corretos: 30 de 144
-Nota de isaque para o teste completo: 1.35
-Nota de isaque: 0+(1.35)
-Nota de isaque: 1.35
+  - Resultados corretos: 38 de 144
+Nota de isaque para o teste completo: 1.89
+Nota de isaque: 0+(1.89)
+Nota de isaque: 1.89

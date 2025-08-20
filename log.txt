@@ -34,24 +34,24 @@ LINKANDO OS ARQUIVOS COMPILADOS:
 
 EXECUTANDO O PROGRAMA EM CADA CASO:
  - Pasta completo / Caso 1:
- - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/1/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 3.0
+ - Resultado para o estatistica.txt: Ok! Peso: 1.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Ok! Peso: 1.0
  - Resultado para o resumo.txt: Ok! Peso: 1.0
- - Nota para o Caso (soma dos pesos): 3.00 (soma total) - 0% (desconto do valgrind) = 3.00 de 8.0 pontos.
+ - Nota para o Caso (soma dos pesos): 7.00 (soma total) - 0% (desconto do valgrind) = 7.00 de 8.0 pontos.
  - Pasta completo / Caso 10:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/10/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Ok! Peso: 1.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
  - Resultado para o resumo.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
+ - Nota para o Caso (soma dos pesos): 2.00 (soma total) - 0% (desconto do valgrind) = 2.00 de 8.0 pontos.
  - Pasta completo / Caso 11:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/11/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
@@ -59,15 +59,15 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso 12:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/12/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Ok! Peso: 1.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Ok! Peso: 1.0
  - Resultado para o resumo.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 2.00 (soma total) - 0% (desconto do valgrind) = 2.00 de 8.0 pontos.
+ - Nota para o Caso (soma dos pesos): 3.00 (soma total) - 0% (desconto do valgrind) = 3.00 de 8.0 pontos.
  - Pasta completo / Caso 13:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/13/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
@@ -75,7 +75,7 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso 14:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/14/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
@@ -83,7 +83,7 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso 15:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/15/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
@@ -91,15 +91,15 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso 16:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/16/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Ok! Peso: 1.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Incorreto! Peso: 0.0
  - Resultado para o ranking.txt: Ok! Peso: 1.0
  - Resultado para o resumo.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
+ - Nota para o Caso (soma dos pesos): 2.00 (soma total) - 0% (desconto do valgrind) = 2.00 de 8.0 pontos.
  - Pasta completo / Caso 17:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/17/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
@@ -107,7 +107,7 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso 18:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/18/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
@@ -115,7 +115,7 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso 19:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/19/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
@@ -123,7 +123,7 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso 2:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/2/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
@@ -131,7 +131,7 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso 20:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/20/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
@@ -139,7 +139,7 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso 21:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/21/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
@@ -147,15 +147,15 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso 3:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/3/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Ok! Peso: 1.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Ok! Peso: 1.0
  - Resultado para o resumo.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 2.00 (soma total) - 0% (desconto do valgrind) = 2.00 de 8.0 pontos.
+ - Nota para o Caso (soma dos pesos): 3.00 (soma total) - 0% (desconto do valgrind) = 3.00 de 8.0 pontos.
  - Pasta completo / Caso 4:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/4/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
@@ -163,7 +163,7 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso 5:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/5/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
@@ -171,7 +171,7 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso 6:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/6/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
@@ -179,7 +179,7 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso 7:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/7/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
@@ -187,23 +187,23 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso 8:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/8/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
  - Resultado para o resumo.txt: Incorreto! Peso: 0.0
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso 9:
- - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/9/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 3.0
+ - Resultado para o estatistica.txt: Ok! Peso: 1.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Ok! Peso: 1.0
  - Resultado para o resumo.txt: Ok! Peso: 1.0
- - Nota para o Caso (soma dos pesos): 3.00 (soma total) - 0% (desconto do valgrind) = 3.00 de 8.0 pontos.
+ - Nota para o Caso (soma dos pesos): 7.00 (soma total) - 0% (desconto do valgrind) = 7.00 de 8.0 pontos.
  - Pasta completo / Caso bonus_1:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/bonus_1/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
@@ -211,7 +211,7 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso bonus_2:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/bonus_2/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
@@ -219,13 +219,13 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso bonus_3:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - O aluno não gerou o arquivo de saída Resultados/isaque/completo/Casos/bonus_3/saida/estatistica.txt, considerando resultado incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
  - Resultado para o resumo.txt: Incorreto! Peso: 0.0
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
- - Nota para a pasta completo (máximo 9.0) - 30.00 de 192.0 - 15.00% de 9.0: 1.35.
+ - Nota para a pasta completo (máximo 9.0) - 42.00 de 192.0 - 21.00% de 9.0: 1.89.
  -----
 
 #######################################
@@ -238,10 +238,10 @@ Aluno: isaque
  - Pastas Compiladas Corretamente: 1 de 1 
  - Pastas Linkadas Corretamente: 1 de 1
  - Teste completo
- - Resultados corretos: 30 de 144
- - Nota de isaque para o teste completo: 1.35
- - Nota de isaque: 0+(1.35)
- - Nota de isaque: 1.35
+ - Resultados corretos: 38 de 144
+ - Nota de isaque para o teste completo: 1.89
+ - Nota de isaque: 0+(1.89)
+ - Nota de isaque: 1.89
 
 ----------------------------------------------------------------------------
 

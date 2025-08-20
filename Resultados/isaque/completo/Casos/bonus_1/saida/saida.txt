@@ -278,7 +278,7 @@ Pontos: 6 | Vidas: 3 | Iteracoes: 13
 |                           |
 |                           |
 |---------------------------|
-Pontos: 7 | Vidas: 3 | Iteracoes: 14
+Pontos: 17 | Vidas: 3 | Iteracoes: 14
 |---------------------------|
 |           o_o             |
 |           / \             |

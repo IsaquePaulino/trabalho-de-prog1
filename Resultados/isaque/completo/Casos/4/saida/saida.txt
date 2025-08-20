@@ -151,7 +151,7 @@ Pontos: 3 | Vidas: 8 | Iteracoes: 8
 |                                    |
 |                                    |
 |------------------------------------|
-Pontos: 4 | Vidas: 8 | Iteracoes: 9
+Pontos: 14 | Vidas: 8 | Iteracoes: 9
 |------------------------------------|
 |             >.<                    |
 |             /_\                    |
