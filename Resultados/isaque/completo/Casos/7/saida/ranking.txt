@@ -4,3 +4,4 @@ id_pista,id_carro,iteracao
 4,3,32
 4,3,19
 6,1,10
+6,2,35

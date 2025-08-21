@@ -1,3 +1,3 @@
-[1] Na pista 3 o carro 1 atropelou a galinha na posicao (18,8).
-[3] Na pista 2 o carro 1 atropelou a galinha na posicao (18,5).
-[8] Fim de jogo
+[1] Na pista 3 o carro 1 atropelou a galinha na posicao (18,7).
+[3] Na pista 2 o carro 1 atropelou a galinha na posicao (18,4).
+[17] Fim de jogo

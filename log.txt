@@ -61,26 +61,26 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
  - Resultado para o estatistica.txt: Ok! Peso: 1.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
- - Resultado para o inicializacao.txt: Incorreto! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Ok! Peso: 1.0
  - Resultado para o resumo.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 2.00 (soma total) - 0% (desconto do valgrind) = 2.00 de 8.0 pontos.
+ - Nota para o Caso (soma dos pesos): 3.00 (soma total) - 0% (desconto do valgrind) = 3.00 de 8.0 pontos.
  - Pasta completo / Caso 13:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Ok! Peso: 1.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
  - Resultado para o resumo.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
+ - Nota para o Caso (soma dos pesos): 2.00 (soma total) - 0% (desconto do valgrind) = 2.00 de 8.0 pontos.
  - Pasta completo / Caso 14:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Ok! Peso: 1.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
  - Resultado para o resumo.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
+ - Nota para o Caso (soma dos pesos): 2.00 (soma total) - 0% (desconto do valgrind) = 2.00 de 8.0 pontos.
  - Pasta completo / Caso 15:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
  - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
@@ -95,8 +95,8 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Incorreto! Peso: 0.0
  - Resultado para o ranking.txt: Ok! Peso: 1.0
- - Resultado para o resumo.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 2.00 (soma total) - 0% (desconto do valgrind) = 2.00 de 8.0 pontos.
+ - Resultado para o resumo.txt: Ok! Peso: 1.0
+ - Nota para o Caso (soma dos pesos): 3.00 (soma total) - 0% (desconto do valgrind) = 3.00 de 8.0 pontos.
  - Pasta completo / Caso 17:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
  - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
@@ -147,12 +147,12 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso 3:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - Resultado para o estatistica.txt: Ok! Peso: 1.0
+ - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
- - Resultado para o ranking.txt: Ok! Peso: 1.0
+ - Resultado para o ranking.txt: Incorreto! Peso: 0.0
  - Resultado para o resumo.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 3.00 (soma total) - 0% (desconto do valgrind) = 3.00 de 8.0 pontos.
+ - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso 4:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
  - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
@@ -187,12 +187,12 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso 8:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Ok! Peso: 1.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
  - Resultado para o resumo.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
+ - Nota para o Caso (soma dos pesos): 2.00 (soma total) - 0% (desconto do valgrind) = 2.00 de 8.0 pontos.
  - Pasta completo / Caso 9:
  - Resultado para o saida.txt: Ok! Peso: 3.0
  - Resultado para o estatistica.txt: Ok! Peso: 1.0
@@ -211,12 +211,12 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
  - Pasta completo / Caso bonus_2:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
+ - Resultado para o estatistica.txt: Ok! Peso: 1.0
  - Resultado para o heatmap.txt: Incorreto! Peso: 0.0
  - Resultado para o inicializacao.txt: Ok! Peso: 1.0
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
  - Resultado para o resumo.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
+ - Nota para o Caso (soma dos pesos): 2.00 (soma total) - 0% (desconto do valgrind) = 2.00 de 8.0 pontos.
  - Pasta completo / Caso bonus_3:
  - Resultado para o saida.txt: Incorreto! Peso: 0.0
  - Resultado para o estatistica.txt: Incorreto! Peso: 0.0
@@ -225,7 +225,7 @@ EXECUTANDO O PROGRAMA EM CADA CASO:
  - Resultado para o ranking.txt: Incorreto! Peso: 0.0
  - Resultado para o resumo.txt: Incorreto! Peso: 0.0
  - Nota para o Caso (soma dos pesos): 1.00 (soma total) - 0% (desconto do valgrind) = 1.00 de 8.0 pontos.
- - Nota para a pasta completo (máximo 9.0) - 41.00 de 192.0 - 21.00% de 9.0: 1.89.
+ - Nota para a pasta completo (máximo 9.0) - 45.00 de 192.0 - 23.00% de 9.0: 2.07.
  -----
 
 #######################################
@@ -238,10 +238,10 @@ Aluno: isaque
  - Pastas Compiladas Corretamente: 1 de 1 
  - Pastas Linkadas Corretamente: 1 de 1
  - Teste completo
- - Resultados corretos: 37 de 144
- - Nota de isaque para o teste completo: 1.89
- - Nota de isaque: 0+(1.89)
- - Nota de isaque: 1.89
+ - Resultados corretos: 41 de 144
+ - Nota de isaque para o teste completo: 2.07
+ - Nota de isaque: 0+(2.07)
+ - Nota de isaque: 2.07
 
 ----------------------------------------------------------------------------
 
